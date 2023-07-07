@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgetten password</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <main>
+        <div class="formDiv">
+            <form name="form">
+                <h3 style="text-align: center">Fogotten Password</h3>
+                <div>
+                    <label>Email:</label><br />
+                    <input class="input" type="email" id="email" />
+                    <small id="smallEmail" style="display: none; color: red">Enter a valid email!</small>
+                </div>
+                <button onclick="click" id="button">Send Code</button>
+                <p id="exists" style="color: red; display: none">
+                    Email already exist
+                </p>
+                <p style="text-align: right">
+                   Not my account <a href="login.html">Login</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+
+    <script>
+           let button = document.getElementById("button");
+
+            button.addEventListener("click", function (e) {
+            e.preventDefault();
+            let email = document.getElementById("email");
+            let error = document.getElementById("error");
+
+            let userEmail = localStorage.getItem("email");
+
+            if (userEmail !== email.value ) {
+                //   alert("Email or password is not correct");
+                error.style.display ="block"
+                email.style.border = "1px solid red";
+                setTimeout(() => {
+                    email.style.border = "1px solid black";
+                }, 5000);
+            } else {
+                setTimeout(() => {
+                    window.location.replace("http://127.0.0.1:5501/index/changePass.html");
+                    
+                }, 3000);
+            }
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   </head>
+   <body>
+      <div class="nav">
+         <button
+            id="menu"
+            onmouseover="enter()"
+            onmouseleave="out()"
+            onclick="opened()"
+         >
+            |||
+         </button>
+         <div class="btnDiv">
+            <button id="undo">Undo</button>
+            <button id="clear">Clear</button>
+            <button id="logout" onclick="logout()">LogOut</button>
+         </div>
+      </div>
+
+      <div class="sidebar" id="sidebar">
+         <div class="cancelDiv">
+            <button id="cancel" onclick="cancelled()">X</button>
+         </div>
+         <nav>
+            <h3><a href="#">Link1</a></h3>
+            <h3><a href="#">Link2</a></h3>
+            <h3><a href="#">Link3</a></h3>
+         </nav>
+      </div>
+      <div id="body">
+         <form>
+            <input type="text" id="input" />
+            <button onclick="click" id="button">Submit</button>
+         </form>
+
+         <div id="todo"></div>
+         <div class="modal">
+            <div class="divModal">
+                <h3>Are You Sure You Want to delete This ??</h3>
+                <div class="optionDiv">
+                    <button class="option" onclick="deleteUser()">Yes</button><button class="option" onclick="removeModal()">No</button>
+                </div>
+            </div>
+         </div>
+      </div>
+      
+      
+      <div class="dropdown" >
+          <div class="dropdown-content" onclick="displayModal()">
+              <span>Delete account</span>
+          </div>
+        <i class="bi bi-exclamation-circle-fill left" ></i>
+    </div>
+
+  
+
+
+
+      <script src="script.js"></script>
+   </body>
+</html>
